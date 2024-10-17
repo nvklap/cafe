@@ -1,0 +1,85 @@
+@use '../utils/' as u;
+
+.topbar {
+  display: none;
+
+  @include u.breakpoints(small) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-block-end: 1px solid var(--white-alpha-20);
+    z-index: 4;
+    transition: var(--transition-1);
+  }
+
+  &:has(~ .header.active) {
+    transform: translateY(-100%);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 1rem;
+
+    @include u.breakpoints(large) {
+      justify-content: space-between;
+    }
+
+    @include u.breakpoints(xlarge) {
+      max-width: unset;
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &:first-child {
+      display: none;
+
+      @include u.breakpoints(large) {
+        display: flex;
+      }
+    }
+  }
+
+  &__item:not(.link) {
+    display: none;
+
+    @include u.breakpoints(large) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &.link {
+      transition: var(--transition-1);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--c-dark-red);
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 2rem;
+    height: auto;
+  }
+
+  &__info {
+    font-size: var(--fontSize-label-1);
+  }
+}
