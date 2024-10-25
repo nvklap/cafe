@@ -1,0 +1,93 @@
+@use '../utils/' as u;
+
+.about {
+  @include u.breakpoints(xlarge) {
+    padding: 17rem 10rem;
+  }
+
+  &__container {
+    display: grid;
+    gap: 12rem;
+
+    @include u.breakpoints(small) {
+      gap: 8rem;
+    }
+
+    @include u.breakpoints(large) {
+      grid-template-columns: 0.7fr 1fr;
+    }
+  }
+
+  &__text {
+    margin-block: 1.3rem 3rem;
+  }
+
+  &__btn {
+    margin-inline: auto;
+    margin-block-start: 1.6rem;
+  }
+
+  &__banner {
+    position: relative;
+    margin-block-start: 12rem;
+
+    & > .img-100 {
+      padding-inline-start: 5rem;
+
+      @include u.breakpoints(small) {
+        padding-inline-start: 9rem;
+      }
+    }
+
+    & .abs-img {
+      @include u.has-before {
+        z-index: -1;
+        background-repeat: no-repeat;
+      }
+
+      position: absolute;
+
+      &-1 {
+        bottom: -12rem;
+        left: 0;
+        width: 15rem;
+        padding-block: 5rem;
+
+        @include u.breakpoints(small) {
+          width: 28.5rem;
+        }
+
+        &::before {
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 15rem;
+          background-image: url('../images/img-pattern.svg');
+        }
+      }
+
+      &-2 {
+        top: -6.5rem;
+        right: 0;
+        overflow: hidden;
+
+        &::before {
+          inset: 0;
+          background-image: url('../images/badge-2-bg.png');
+          background-size: contain;
+          animation: rotate360 15s linear infinite;
+        }
+      }
+    }
+  }
+
+  &__shape {
+    display: none;
+    @include u.breakpoints(xxlarge) {
+      display: block;
+      top: 46%;
+      left: 0;
+    }
+  }
+}
