@@ -1,0 +1,104 @@
+@use '../utils/' as u;
+
+.special {
+  padding-block-start: 7rem;
+  text-align: left;
+
+  @include u.breakpoints(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+
+  @include u.breakpoints(xxlarge) {
+    position: relative;
+    overflow: visible;
+  }
+
+  &__banner {
+    @include u.breakpoints(medium) {
+    }
+  }
+
+  &__content {
+    padding: 5rem 2rem;
+
+    @include u.breakpoints(medium) {
+      padding-inline: 5rem 2.5rem;
+    }
+  }
+
+  &__subtitle {
+    &::after {
+      @include u.breakpoints(medium) {
+        margin-inline: 0;
+      }
+    }
+  }
+
+  &__text {
+    margin-block: 1.6rem 4rem;
+    @include u.breakpoints(xlarge) {
+      max-width: 46rem;
+      margin-inline: 0;
+    }
+  }
+
+  &__pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-block-end: 4rem;
+
+    @include u.breakpoints(medium) {
+      justify-content: start;
+    }
+  }
+
+  &__original-price {
+    color: var(--c-grey);
+  }
+  &__discount-price {
+    color: var(--c-bright-red);
+  }
+
+  &__btn {
+    margin-inline: auto;
+    @include u.breakpoints(medium) {
+      margin-inline: 0;
+    }
+  }
+
+  & .abs-img {
+    margin-inline: auto;
+    margin-block-end: 1.2rem;
+    width: auto;
+
+    @include u.breakpoints(medium) {
+      position: absolute;
+      top: calc(7rem - 0.3rem);
+      left: calc(50% - 7rem);
+      z-index: 1;
+    }
+  }
+
+  &__shape {
+    display: none;
+
+    @include u.breakpoints(xlarge) {
+      display: block;
+      right: 0;
+      z-index: 1;
+
+      &--up {
+        top: 45%;
+      }
+      &--bottom {
+        bottom: 0;
+        transform: translateY(50%);
+        width: max-content;
+      }
+    }
+  }
+}
