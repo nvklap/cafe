@@ -1,0 +1,141 @@
+@use '../utils/' as u;
+
+.menu {
+  &__title {
+    margin-block-end: 4rem;
+  }
+
+  &__list {
+    margin-block-end: 5rem;
+
+    @include u.breakpoints(medium) {
+      grid-template-columns: 1fr;
+    }
+
+    @include u.breakpoints(large) {
+      position: relative;
+      column-gap: 9rem;
+      grid-template-columns: 1fr 1fr;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        border-inline-start: 1px solid var(--white-alpha-20);
+      }
+    }
+
+    @include u.breakpoints(xlarge) {
+      gap: 5.5rem 20rem;
+      margin-block-end: 5.5rem;
+      max-width: 140rem;
+      margin-inline: auto;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+
+    &-head {
+      @include u.breakpoints(small) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+    }
+
+    &:hover .img-cover {
+      transform: scale(1.05);
+    }
+
+    &-title {
+      transition: var(--transition-1);
+    }
+
+    &:hover &-title,
+    &:focus-within &-title {
+      color: var(--c-bright-red);
+    }
+
+    &-badge {
+      background-color: var(--c-dark-red);
+      color: var(--white);
+      max-width: max-content;
+      line-height: var(--lineHeight-6);
+      text-transform: uppercase;
+      padding-inline: 1rem;
+      margin-block-start: 1rem;
+
+      @include u.breakpoints(small) {
+        margin-block-start: 0;
+      }
+    }
+
+    &-subtitle {
+      color: var(--white);
+      text-shadow: 2px 0px 1px var(--c-dark-red);
+      margin-block: 1rem;
+
+      @include u.breakpoints(small) {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        position: relative;
+
+        &::before {
+          content: '';
+          height: 0.6rem;
+          flex-grow: 1;
+          border-block: 1px solid var(--white-alpha-20);
+        }
+      }
+    }
+
+    &-text {
+      color: var(--quick-silver);
+      line-height: var(--lineHeight-4);
+    }
+  }
+
+  &__banner {
+    flex-shrink: 0;
+    border-radius: var(--radius-24);
+
+    & .img-cover {
+      transition: var(--transition-2);
+    }
+  }
+
+  &__text {
+    &--highlight {
+      display: inline-block;
+      color: var(--c-bright-red);
+    }
+  }
+
+  &__btn {
+    margin-inline: auto;
+    margin-block-start: 2.6rem;
+  }
+
+  &__shape {
+    display: block;
+    width: 70%;
+    &--top {
+      top: 0;
+      left: 0;
+    }
+    &--bottom {
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
