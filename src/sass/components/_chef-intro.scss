@@ -3,6 +3,9 @@
 .chef-intro {
   padding-block-end: 34rem;
   position: static;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   &__text {
     font-size: var(--fontSize-body-3);
