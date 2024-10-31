@@ -1,0 +1,39 @@
+@use '../utils/' as u;
+
+.chef-intro {
+  padding-block-end: 34rem;
+  position: static;
+
+  &__text {
+    font-size: var(--fontSize-body-3);
+    @include u.breakpoints(large) {
+      max-width: 91rem;
+      margin-inline: auto;
+    }
+  }
+
+  &__decoration-quote {
+    font-size: 10rem;
+    font-family: serif;
+  }
+
+  &__separators-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-block: 4rem 5rem;
+  }
+
+  &__profile {
+    &-img {
+      width: unset;
+      margin-inline: auto;
+      border-radius: var(--radius-circle);
+      margin-block-end: 1.5rem;
+    }
+
+    &-name {
+      font-weight: var(--weight-bold);
+    }
+  }
+}
