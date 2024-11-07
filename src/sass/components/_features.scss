@@ -1,0 +1,71 @@
+@use '../utils/' as u;
+
+.features {
+  @include u.breakpoints(xxlarge) {
+    overflow: visible;
+  }
+
+  &__title {
+    margin-block-end: 4rem;
+  }
+
+  &__list {
+    @include u.breakpoints(xlarge) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    &:nth-child(2n + 1) {
+      background-color: var(--eerie-black-3);
+    }
+
+    &:nth-child(2n) {
+      background-color: var(--smoky-black-3);
+    }
+  }
+
+  &__card {
+    padding: 3rem 2rem 4rem;
+
+    & img {
+      width: unset;
+      transition: var(--transition-2);
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    &-title {
+      margin-block: 2rem;
+    }
+  }
+
+  &__icon {
+    max-width: max-content;
+    margin-inline: auto;
+  }
+
+  &__text {
+    color: var(--quick-silver);
+    line-height: var(--lineHeight-6);
+  }
+
+  &__shape {
+    display: none;
+
+    @include u.breakpoints(xxlarge) {
+      display: block;
+
+      &--up {
+        top: -10rem;
+        right: 0;
+      }
+      &--bottom {
+        bottom: 8rem;
+        left: 0;
+      }
+    }
+  }
+}
