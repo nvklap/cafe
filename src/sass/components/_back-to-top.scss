@@ -1,0 +1,30 @@
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--c-dark-red);
+  color: var(--c-light-grey);
+  font-size: 3rem;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-1);
+  border-radius: var(--radius-circle);
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+
+  &:hover,
+  &:focus {
+    background-color: var(--white);
+    color: var(--c-dark-red);
+  }
+
+  &.active {
+    opacity: 0.9;
+    visibility: visible;
+  }
+}
