@@ -10,6 +10,7 @@ body {
   font-size: var(--fontSize-body-4);
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
+  overflow: hidden; /* loader */
 
   &.loaded {
     overflow: auto; /* fallback*/
