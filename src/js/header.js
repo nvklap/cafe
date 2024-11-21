@@ -17,7 +17,9 @@ function hideHeader() {
 }
 
 window.addEventListener('scroll', function () {
-  if (this.window.scrollY >= 50) {
+  if (document.body.classList.contains('active')) return;
+
+  if (window.scrollY >= 50) {
     header.classList.add('active');
     hideHeader();
   } else {
