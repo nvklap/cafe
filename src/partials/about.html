@@ -24,7 +24,19 @@
 
     <figure class="about__banner">
       <img
-        src="./images/about-banner.jpg"
+        srcset="
+          ./images/about-banner-542.jpg   542w,
+          ./images/about-banner-639.jpg   639w,
+          ./images/about-banner-735.jpg   735w,
+          ./images/about-banner-959.jpg   959w,
+          ./images/about-banner-1090.jpg 1090w,
+          ./images/about-banner-1218.jpg 1218w,
+          ./images/about-banner-1470.jpg 1470w,
+          ./images/about-banner-1918.jpg 1918w,
+          ./images/about-banner-2560.jpg 2560w
+        "
+        sizes="(max-width: 425px) 90vw,(max-width: 574px) 542px, (max-width: 767px) 735px, (max-width: 991px) 959px, (max-width: 1199px) 522px,(max-width: 1399px) 639px,(min-width: 1400px) 50vw"
+        src="./images/about-banner-542.jpg"
         alt="About Banner"
         class="img-100"
         width="570"
@@ -33,14 +45,18 @@
         data-parallax-item
         data-parallax-speed="1"
       />
-
       <div
         class="abs-img abs-img-1 has-before"
         data-parallax-item
         data-parallax-speed="1.75"
       >
         <img
-          src="./images/about-abs-image.jpg"
+          srcset="
+            ./images/about-abs-image-150.jpg 150w,
+            ./images/about-abs-image-285.jpg 285w
+          "
+          sizes="(max-width: 574px) 150px, (min-width: 767px) 285px"
+          src="./images/about-abs-image-285.jpg"
           alt=""
           class="img-100"
           width="285"
