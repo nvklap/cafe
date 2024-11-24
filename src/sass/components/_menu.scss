@@ -108,6 +108,8 @@
   &__banner {
     flex-shrink: 0;
     border-radius: var(--radius-24);
+    width: 10rem;
+    height: 10rem;
 
     & .img-cover {
       transition: var(--transition-2);
