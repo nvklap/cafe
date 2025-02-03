@@ -1,0 +1,38 @@
+@use '../../utils/' as u;
+
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  z-index: 1;
+
+  &__subtitle {
+    position: relative;
+    color: var(--c-grey);
+    font-weight: var(--weight-bold);
+    font-size: var(--fontSize-body-4);
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing-2);
+    margin-block-end: 1.2rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 10rem;
+      height: 3px;
+      border-block: 1px solid var(--c-grey);
+      margin-inline: auto;
+    }
+  }
+
+  &__text {
+    // Add specific styling for .service or .about
+
+    @include u.breakpoints(small) {
+      :is(.service, .about) & {
+        max-width: 42rem;
+        margin-inline: auto;
+      }
+    }
+  }
+}

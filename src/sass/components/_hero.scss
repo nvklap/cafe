@@ -1,0 +1,116 @@
+@use '../utils/' as u;
+
+.hero {
+  position: relative;
+  padding-block: 12rem;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+
+  @include u.breakpoints(xlarge) {
+    max-height: 88rem;
+  }
+
+  &__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    padding-block-start: 10rem;
+    padding-inline: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-3);
+    z-index: 1;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+
+      & .slider-reveal {
+        animation: sliderReveal 1s ease forwards;
+      }
+
+      & .section__subtitle {
+        animation-delay: 500ms;
+      }
+
+      & .hero__title {
+        animation-delay: 1000ms;
+      }
+
+      & .hero__text {
+        animation-delay: 1.5s;
+      }
+
+      & .btn {
+        animation-delay: 2s;
+      }
+    }
+  }
+
+  &__subtitle::after {
+    margin-block: 1.4rem 2rem;
+  }
+
+  &__title {
+    color: var(--c-dark-red);
+    font-weight: var(--weight-bold);
+  }
+
+  &__text {
+    margin-block: 1rem 4rem;
+  }
+
+  &__btn {
+    margin-inline: auto;
+
+    // @include u.breakpoints(small) {
+    // 	transform: scale(0.7);
+    // }
+  }
+
+  &__book {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 2;
+    background-color: var(--c-light-grey);
+    width: 11rem;
+    height: 11rem;
+    padding: 1.2rem;
+    transform: scale(0.6);
+
+    @include u.breakpoints(xlarge) {
+      bottom: 5rem;
+      right: 5rem;
+      transform: scaleX(1);
+    }
+
+    & img {
+      width: auto;
+      margin-inline: auto;
+      margin-block-end: 0.6rem;
+    }
+
+    & span {
+      color: var(--c-dark-red);
+      font-weight: var(--weight-bold);
+      text-transform: uppercase;
+      letter-spacing: var(--letterSpacing-1);
+      line-height: var(--lineHeight-3);
+    }
+
+    @extend %has-after;
+
+    &::after {
+      inset: 0;
+      border: 1px solid var(--c-dark-red);
+      animation: rotate360 15s linear infinite;
+    }
+  }
+}

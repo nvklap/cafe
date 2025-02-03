@@ -1,0 +1,19 @@
+%has-after {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+  }
+}
+
+%has-before {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+  }
+}
