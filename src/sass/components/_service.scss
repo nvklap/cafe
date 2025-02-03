@@ -1,0 +1,101 @@
+@use '../utils/' as u;
+
+.service {
+  &__container {
+    @include u.breakpoints(small) {
+      max-width: 42rem;
+      margin-inline: auto;
+    }
+  }
+
+  &__title {
+    margin-block-end: 1.6rem;
+  }
+
+  &__text {
+    margin-block-end: 4rem;
+
+    @include u.breakpoints(xlarge) {
+      margin-block-end: 7.5rem;
+    }
+  }
+
+  &__list {
+    @include u.breakpoints(xlarge) {
+      gap: 15rem;
+    }
+  }
+
+  &__item {
+    @include u.breakpoints(xlarge) {
+      &:nth-child(2n + 1) {
+        transform: translateY(-16rem);
+      }
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+  }
+
+  &__card-head {
+    padding-block: 3rem;
+    margin-block: 2.6rem;
+    z-index: 1;
+
+    @include u.has-before {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14rem;
+      height: 100%;
+      background-image: url(../images/img-pattern.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: repeat;
+      transition: var(--transition-2);
+      transition-delay: 0;
+      z-index: -1;
+      will-change: transform;
+    }
+  }
+
+  &__card:hover &__card-head::before,
+  &__card:focus-within &__card-head::before {
+    transform: rotateY(0.5turn) translateX(50%);
+    transition-delay: 300ms;
+  }
+
+  &__banner {
+    transition: var(--transition-2);
+  }
+
+  &__card:hover &__banner,
+  &__card:focus-within &__banner {
+    transform: scale(1.05);
+  }
+
+  &__card-title {
+    color: var(--white);
+  }
+
+  &__card-link {
+    text-transform: uppercase;
+    font-size: var(--fontSize-label-1);
+    letter-spacing: var(--letterSpacing-3);
+    font-weight: var(--weight-bold);
+    color: var(--c-dark-red);
+    margin-inline: auto;
+  }
+
+  &__shape {
+    &--bottom {
+      bottom: 0;
+      left: 0;
+    }
+    &--up {
+      top: 0;
+      right: 0;
+    }
+  }
+}

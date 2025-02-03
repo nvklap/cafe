@@ -1,0 +1,12 @@
+@use '../../utils/' as u;
+
+.shape {
+  display: none;
+  position: absolute;
+  max-width: max-content;
+  z-index: -1;
+
+  @include u.breakpoints(large) {
+    display: block;
+  }
+}
