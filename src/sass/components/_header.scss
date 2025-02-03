@@ -1,0 +1,88 @@
+@use '../utils/' as u;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 4;
+  border-block-end: 1px solid transparent;
+  transition: var(--transition-1);
+
+  @include u.breakpoints(small) {
+    top: 5rem;
+  }
+
+  &__container {
+    padding-inline: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+
+    @include u.breakpoints(xlarge) {
+      max-width: unset;
+      align-items: start;
+    }
+  }
+
+  &__button {
+    &--open {
+      padding: 1.2rem;
+      padding-inline-end: 0;
+
+      & .line {
+        width: 3rem;
+        height: 0.2rem;
+        background-color: var(--white);
+        margin-block: 0.4rem;
+        transform-origin: left;
+        animation: menuBtn 0.4s ease-in-out alternate infinite;
+      }
+
+      & .line-2 {
+        animation-delay: 0.15s;
+      }
+      & .line-2 {
+        animation-delay: 0.3s;
+      }
+
+      @include u.breakpoints(xlarge) {
+        display: none;
+      }
+    }
+
+    &--booking {
+      display: none;
+
+      @include u.breakpoints(small) {
+        display: block;
+        margin-inline-start: auto;
+      }
+
+      @include u.breakpoints(xlarge) {
+        margin-inline-start: 0;
+      }
+    }
+  }
+
+  &__logo {
+    max-width: 15rem;
+  }
+
+  &.active {
+    padding-block: 1rem;
+    background-color: var(--eerie-black-4);
+    border-color: var(--black-alpha-15);
+
+    @include u.breakpoints(small) {
+      top: 0;
+    }
+  }
+
+  &.hidden {
+    transform: translateY(-100%);
+    transition-delay: 250ms;
+  }
+}

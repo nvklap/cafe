@@ -1,0 +1,17 @@
+@use '../../utils/' as u;
+
+.contact {
+  &-label {
+    font-weight: var(--weight-bold);
+  }
+
+  &-number {
+    color: var(--c-bright-red);
+    max-width: max-content;
+    margin-inline: auto;
+
+    @include u.breakpoints(small) {
+      --fontSize-body-1: 3rem;
+    }
+  }
+}

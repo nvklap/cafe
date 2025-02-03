@@ -1,0 +1,112 @@
+<header class="header" data-header>
+  <div class="header__container container">
+    <a href="#" class="header__logo logo">
+      <img
+        src="./images/logo-white.png"
+        alt="Ravinion Logo"
+        width="100"
+        height="47"
+      />
+    </a>
+
+    <nav class="navbar" data-navbar>
+      <button
+        class="navbar__button--close"
+        aria-label="close mobile menu"
+        data-nav-toggler
+      >
+        <svg width="26" height="26" aria-label="close mobile menu">
+          <use
+            xlink:href="./images/sprite.svg#close-outline"
+            href="./images/sprite.svg#close-outline"
+          ></use>
+        </svg>
+      </button>
+
+      <a href="#" class="navbar__logo logo">
+        <img
+          src="./images/logo-white.png"
+          alt="Ravinion Logo"
+          width="170"
+          height="80"
+        />
+      </a>
+
+      <ul class="navbar__list">
+        <li class="navbar__item">
+          <a href="#home" class="navbar__link active hover-underline"
+            ><div class="navbar__separator separator"></div>
+            <span class="navbar__span span">Home</span></a
+          >
+        </li>
+
+        <li class="navbar__item">
+          <a href="#menu" class="navbar__link hover-underline"
+            ><div class="navbar__separator separator"></div>
+            <span class="navbar__span span">Menu</span></a
+          >
+        </li>
+
+        <li class="navbar__item">
+          <a href="#about" class="navbar__link hover-underline"
+            ><div class="navbar__separator separator"></div>
+            <span class="navbar__span span">About Us</span></a
+          >
+        </li>
+
+        <li class="navbar__item">
+          <a href="#" class="navbar__link hover-underline"
+            ><div class="navbar__separator separator"></div>
+            <span class="navbar__span span">Chefs</span></a
+          >
+        </li>
+
+        <li class="navbar__item">
+          <a href="#" class="navbar__link hover-underline"
+            ><div class="navbar__separator separator"></div>
+            <span class="navbar__span span">Contact</span></a
+          >
+        </li>
+      </ul>
+
+      <div class="navbar__contacts text-center">
+        <p class="headline-2 navbar__title">Visit Us</p>
+        <address class="navbar__text body-4">
+          Velyka Vasylkivska St, 19,<br />
+          Kyiv 02000, UA
+        </address>
+
+        <p class="body-4 navbar__text">Open: 9.30 am to 11.00 pm</p>
+        <a
+          href="mailto:booking@ravinion.com"
+          class="navbar__text navbar__text--email"
+          >booking@ravinion.com</a
+        >
+
+        <div class="separator"></div>
+
+        <p class="contact-label">Booking Request</p>
+        <a href="tel:+88234567890" class="body-1 contact-number hover-underline"
+          >+88-23-456-7890</a
+        >
+      </div>
+    </nav>
+
+    <a href="#" class="header__button--booking btn">
+      <span class="btn__forward">Book A Table</span>
+      <span class="btn__behind" aria-hidden="true">Book A Table</span>
+    </a>
+
+    <button
+      class="header__button--open"
+      aria-label="open mobile menu"
+      data-nav-toggler
+    >
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </button>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  </div>
+</header>

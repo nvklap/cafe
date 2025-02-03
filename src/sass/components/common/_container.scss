@@ -1,0 +1,29 @@
+@use '../../utils/' as u;
+
+.container {
+  padding: 1.6rem;
+
+  :is(.service, .events) & {
+    @include u.breakpoints(medium) {
+      max-width: 82rem;
+    }
+
+    @include u.breakpoints(large) {
+      max-width: unset;
+    }
+
+    @include u.breakpoints(xlarge) {
+      max-width: 120rem;
+      width: 100%;
+      margin-inline: auto;
+    }
+  }
+
+  :is(.features) & {
+    @include u.breakpoints(xlarge) {
+      max-width: 120rem;
+      width: 100%;
+      margin-inline: auto;
+    }
+  }
+}

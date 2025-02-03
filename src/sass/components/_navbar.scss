@@ -1,0 +1,195 @@
+@use '../utils/' as u;
+
+.navbar {
+  position: fixed;
+  background-color: var(--smoky-black-1);
+  top: 0;
+  left: -36rem;
+  bottom: 0;
+  max-width: 360px;
+  width: 100%;
+  padding-inline: 3rem;
+  padding-block-end: 5rem;
+  overflow-y: auto;
+  visibility: hidden;
+  z-index: 2;
+  transition: var(--transition-2);
+
+  @include u.breakpoints(xlarge) {
+    all: unset;
+    margin-inline: auto;
+  }
+
+  @include u.breakpoints(xxlarge) {
+    // margin-inline: auto 2rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--white-alpha-10);
+  }
+
+  &.active {
+    visibility: visible;
+    transform: translateX(360px);
+  }
+
+  &__button {
+    &--close {
+      color: var(--white);
+      border: 1px solid currentColor;
+      padding: 0.4rem;
+      border-radius: var(--radius-circle);
+      line-height: 0;
+      margin-inline-start: auto;
+      margin-block: 3rem 2rem;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--c-bright-red);
+      }
+
+      @include u.breakpoints(xlarge) {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    margin-inline: auto;
+    margin-block-end: 6rem;
+    max-width: 17rem;
+
+    & img {
+      width: 100%;
+    }
+
+    @include u.breakpoints(xlarge) {
+      display: none;
+    }
+  }
+
+  &__list {
+    border-block-end: 1px solid var(--white-alpha-20);
+    margin-block-end: 10rem;
+
+    @include u.breakpoints(medium) {
+      margin-inline: 3rem;
+    }
+
+    @include u.breakpoints(xlarge) {
+      border-block-end: none;
+      margin-block-end: 0;
+      display: flex;
+      gap: 3rem;
+    }
+  }
+
+  &__item {
+    border-block-start: 1px solid var(--white-alpha-20);
+    @include u.breakpoints(xlarge) {
+      border-block-start: none;
+    }
+  }
+
+  &__link {
+    border-block-start: 1px solid var(--white-alpha-20);
+    position: relative;
+    font-size: var(--fontSize-label-1);
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    max-width: unset;
+
+    @include u.breakpoints(xlarge) {
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--letterSpacing-1);
+      border-block-start: none;
+    }
+
+    &::after {
+      display: none;
+      @include u.breakpoints(xlarge) {
+        display: block;
+      }
+    }
+
+    &.active::after {
+      @include u.breakpoints(xlarge) {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+
+    &:hover .span,
+    &:focus-visible .span,
+    &.active .span {
+      color: var(--c-bright-red);
+      transform: translateX(20px);
+      @include u.breakpoints(xlarge) {
+        transform: unset;
+      }
+    }
+    &:hover .separator,
+    &:focus-visible .separator,
+    &.active .separator {
+      opacity: 1;
+    }
+  }
+
+  &__span {
+    transition: var(--transition-1);
+  }
+
+  &__separator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(45deg);
+    transition: var(--transition-1);
+    opacity: 0;
+
+    @include u.breakpoints(xlarge) {
+      display: none;
+    }
+  }
+
+  &__contacts {
+    & .separator {
+      margin-block: 3rem;
+      margin-inline: auto;
+    }
+
+    @include u.breakpoints(xlarge) {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-block-end: 1.5rem;
+
+    @include u.breakpoints(xlarge) {
+      display: none;
+    }
+  }
+
+  &__text {
+    margin-block: 1rem;
+    color: var(--quick-silver);
+
+    @include u.breakpoints(xlarge) {
+      display: none;
+    }
+
+    &--email {
+      transition: var(--transition-1);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--c-bright-red);
+      }
+
+      @include u.breakpoints(xlarge) {
+        display: none;
+      }
+    }
+  }
+}
