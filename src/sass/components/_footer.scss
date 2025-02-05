@@ -4,6 +4,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-image: url('../images/footer-bg-small.jpg');
+
+  @include u.retina {
+    background-image: url('../images/footer-bg-small@2x.jpg');
+  }
+
+  @include u.breakpoints(large) {
+    background-image: url('../images/footer-bg.jpg');
+
+    @include u.retina {
+      background-image: url('../images/footer-bg@2x.jpg');
+    }
+  }
 
   &__top {
     margin-block-end: 7rem;
