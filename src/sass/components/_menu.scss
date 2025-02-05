@@ -38,8 +38,11 @@
   &__card {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
     gap: 2rem;
+
+    & > *:last-child {
+      flex-grow: 1;
+    }
 
     &-head {
       @include u.breakpoints(small) {
