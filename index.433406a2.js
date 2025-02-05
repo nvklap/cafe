@@ -1,0 +1,2 @@
+!function(){var e=document.querySelectorAll("[data-parallax-item]"),n=0,t=0;function a(){for(var a=0;a<e.length;a++){var r=Number(e[a].dataset.parallaxSpeed)||1,i=n*r,o=t*r;e[a].style.transform="translate3d(".concat(i,"px, ").concat(o,"px, 0px)")}}window.addEventListener("mousemove",(function(e){var r=e.clientX/window.innerWidth*2-1,i=e.clientY/window.innerHeight*2-1;n=3*-r,t=3*-i,requestAnimationFrame(a)}))}();
+//# sourceMappingURL=index.433406a2.js.map

@@ -1,0 +1,2 @@
+const e=document.querySelector("[data-header]"),s=document.querySelector("[\tdata-back-to-top]");let t=0;window.addEventListener("scroll",(function(){document.body.classList.contains("active")||(window.scrollY>=50?(e.classList.add("active"),t<window.scrollY?(e.classList.add("hidden"),s.classList.add("active")):(e.classList.remove("hidden"),s.classList.remove("active")),t=window.scrollY):e.classList.remove("active"))}));
+//# sourceMappingURL=index.38cdcb2e.js.map

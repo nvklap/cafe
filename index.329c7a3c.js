@@ -1,0 +1,2 @@
+const e=document.querySelectorAll("[data-parallax-item]");let t=0,n=0;function a(){for(let a=0;a<e.length;a++){const i=Number(e[a].dataset.parallaxSpeed)||1,l=t*i,o=n*i;e[a].style.transform=`translate3d(${l}px, ${o}px, 0px)`}}window.addEventListener("mousemove",(e=>{const i=e.clientX/window.innerWidth*2-1,l=e.clientY/window.innerHeight*2-1;t=3*-i,n=3*-l,requestAnimationFrame(a)}));
+//# sourceMappingURL=index.329c7a3c.js.map
