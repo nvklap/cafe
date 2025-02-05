@@ -6,6 +6,35 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-image: url('../images/chef-bg-mobile.jpg');
+
+  @include u.retina {
+    background-image: url('../images/chef-bg-mobile@2x.jpg');
+  }
+
+  @include u.breakpoints(medium) {
+    background-image: url('../images/chef-bg-tablet.jpg');
+
+    @include u.retina {
+      background-image: url('../images/chef-bg-tablet@2x.jpg');
+    }
+  }
+
+  @include u.breakpoints(xlarge) {
+    background-image: url('../images/chef-bg-laptop.jpg');
+
+    @include u.retina {
+      background-image: url('../images/chef-bg-laptop@2x.jpg');
+    }
+  }
+
+  @include u.breakpoints(xxlarge) {
+    background-image: url('../images/chef-bg-desktop.jpg');
+
+    @include u.retina {
+      background-image: url('../images/chef-bg-desktop@2x.jpg');
+    }
+  }
 
   &__text {
     font-size: var(--fontSize-body-3);
